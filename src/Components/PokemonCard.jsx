@@ -1,10 +1,12 @@
-function PokemonCard() {
+import '../App.css';
+
+function PokemonCard(props) {
     return (
         <>
-            <figure>
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="bulbasaur" />
-                <figcaption>bulbasaur</figcaption>
-            </figure>
+            <figure className='card' style={{ backgroundColor: props.color }}>
+                <img src={props.url} alt={props.text} className="card-img" />
+                <figcaption>{props.text}</figcaption>
+            </figure >
         </>
 
     );
