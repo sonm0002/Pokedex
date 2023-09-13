@@ -1,14 +1,24 @@
 import '../App.css';
+import { useState } from 'react'
 
 function PokemonCard(props) {
     return (
-        <>
-            <figure className='card' style={{ backgroundColor: props.color }}>
-                <img src={props.url} alt={props.text} className="card-img" />
-                <figcaption>{props.text}</figcaption>
-            </figure >
-        </>
-
+        <div className="cardContainer">
+            {props.pokemonList.map((pokemon, index) => (
+                < div key={index} >
+                    <figure className='card' style={{ backgroundColor: pokemon.color }}>
+                        {!pokemon.imgSrc ?
+                            <p className="card-noimg" >???</p>
+                            :
+                            < img src={pokemon.imgSrc} alt={pokemon.name} className="card-img" />
+                        }
+                        <figcaption style={{ color: pokemon.imgSrc ? 'white' : 'black' }}>{pokemon.name}</figcaption>
+                    </figure >
+                </div>
+            ))
+            }
+        </div >
     );
 }
+
 export default PokemonCard;

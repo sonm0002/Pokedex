@@ -6,10 +6,9 @@
 }
 
 .cardContainer {
-  flex-direction: row;
   display: flex;
-  align-items: 'center';
-  justify-content: 'center';
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -25,9 +24,24 @@
 
 .card-img {
   width: 100%;
-  height: auto;
   margin-bottom: 0.5rem;
   background-color: white;
   border-radius: inherit;
   box-shadow: inherit;
+}
+
+
+.card-noimg {
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-top: 0px;
+  background-color: white;
+  border-radius: inherit;
+  box-shadow: inherit;
+  /* text-align: center; */
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  color: black;
 }
