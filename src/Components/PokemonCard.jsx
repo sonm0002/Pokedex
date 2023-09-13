@@ -1,36 +1,12 @@
 import '../App.css';
 import { useState } from 'react';
 
-const pokemonList = [
-    {
-        name: "bulbasaur",
-        imgSrc:
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-        color: "lightgreen",
-    },
-    {
-        name: "charmander",
-        imgSrc:
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
-        color: "lightsalmon",
-    },
-    {
-        name: "squirtle",
-        imgSrc:
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
-        color: "lightblue",
-    },
-    {
-        name: "mew",
-    }
-];
-
-function PokemonCard() {
+function PokemonCard({ pokemonList }) {
     return (
         <div className="cardContainer">
             {pokemonList.map((pokemon, index) => (
                 < div key={index} >
-                    <figure className='card' style={{ backgroundColor: pokemon.color }}>
+                    < figure className='card' style={{ backgroundColor: pokemon.color }}>
                         {!pokemon.imgSrc ?
                             <p className="card-noimg" >???</p>
                             :
